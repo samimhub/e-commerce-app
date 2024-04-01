@@ -2,3 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+
+    .nav_link:hover{
+        color: #ff8f9c;
+        transition: all 0.4s;
+    }
+    .nav_link::after{
+        position: absolute;
+        container: '';
+        background-color: #ff8f9c;
+        height: 3px;
+        width: 100%;
+        bottom: -5px ;
+        left: 0;
+        scale: 0;
+        transform-origin:left;
+        transition: all 0.4s;
+    }
+    .nav_link:hover::after{
+        scale: 1;
+    }
+}

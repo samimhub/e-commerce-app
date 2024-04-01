@@ -1,15 +1,11 @@
 import React from 'react'
-import NavBar from './Components/NavBar'
+import Hero from './Components/Hero'
+
 
 function Home() {
   return (
     <div>
-      <div>
-        <NavBar/>
-        <div>
-      E-Commerce-website
-    </div>
-      </div>
+      <Hero/>
     </div>
     
   )
