@@ -1,7 +1,9 @@
+"use client"
+
 import React from 'react'
 import Slider from "react-slick";
 import { SlideData } from '../SlideData';
-import Image from 'next/image';
+import Slide from './Slide';
 
 function Hero() {
 
@@ -19,13 +21,12 @@ function Hero() {
       <Slider {...settings}>
           {
             SlideData.map((item)=>(
-              <productItems
+              <Slide
               key={item.id}
               img={item.img}
               title={item.title}
               mainTitle={item.mainTitle}
-              discount={item.discount}
-              />
+              discount={item.discount}/>
             ))
           }
       </Slider>
@@ -34,21 +35,5 @@ function Hero() {
   )
 };
 
-type productItems={
-  img:string,
-  title:string,
-  mainTitle:string,
-  discount:string,
-}
 
-const productItems=({img,title,mainTitle,discount}:productItems)=>{
-  return(
-    <div>
-      <Image src={img} alt='banner'/>
-      <h3>{title}</h3>
-      <h1>{mainTitle}</h1>
-      <p>{discount}</p>
-    </div>
-  )
-}
 export default Hero
