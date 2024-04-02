@@ -16,22 +16,22 @@ function Hero() {
   };
 
   return (
-    <div>
-     <div>
+
+    <div className='pt-6 lg:pt-0'>
       <Slider {...settings}>
-          {
-            SlideData.map((item)=>(
-              <Slide
+        {
+          SlideData.map((item) => (
+            <Slide
               key={item.id}
               img={item.img}
               title={item.title}
               mainTitle={item.mainTitle}
-              discount={item.discount}/>
-            ))
-          }
+              discount={item.discount} />
+          ))
+        }
       </Slider>
-     </div>
     </div>
+
   )
 };
 
