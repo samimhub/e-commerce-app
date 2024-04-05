@@ -4,9 +4,14 @@ import { useEffect, useState } from "react"
 import { FaFilter } from "react-icons/fa"
 import Cards from "./Cards"
 
+
+
 function Products() {
 
-  const [product,setProduct]=useState([])
+  const [product,setProduct]=useState([]);
+  const [filterItems,setFilterItems] =useState([])
+  const [selectedCategory,setSelectedCategory] =useState("all")
+  const [sortOption,setSortOption] =useState("default")
 
   useEffect(()=>{
     const fetchData = async()=>{
@@ -14,20 +19,34 @@ function Products() {
             const res =await fetch('product.json');
             const data =await res.json();
             setProduct(data); 
+            setFilterItems(data);
         }catch(error){
           console.log("Getting some error...",error)
         }
     }
     fetchData()
   },[])
-  console.log(product)
+  //Filtering Function
+
+  const filteredItems =(category)=>{
+    const filtered =category ==="all" ? (product) : product.filter((items)=> items.category === category)
+    setFilterItems(filtered)
+    setSelectedCategory(category)
+  } 
+  //show all product
+  const showAll =()=>{
+    setFilterItems(product);
+    setSelectedCategory("all");
+
+  }
+
   return (
     <div className="max-w-screen-2xl container mx-auto lg: px:28 px-4 mb-12">
-    <h2> Collection of Product</h2>
+    <h2 className="text-center font-semibold uppercase tracking-[0.2rem] lg:tracking-[1rem] text-blue-500 pb-5"> Collections</h2>
     {/*Product card */}
     <div>
       {/*All Button*/}
-      <div className="flex flex-row items-center justify-center gap-4 md:items-center md:gap-10 flex-wrap ">
+      <div className="flex flex-row items-center justify-start gap-4 md:items-start md:gap-10 flex-wrap ">
         <button>All Products</button>
         <button>Shirt</button>
         <button>Bag</button>
@@ -46,10 +65,11 @@ function Products() {
           <option value="high to low">High to Low</option>
         </select>
       </div>
-      <Cards filterItems={product}/>
+      <Cards filterItems={filterItems}/>
     </div>
     </div>
-  )
-}
+  );
+  }
+
 
 export default Products

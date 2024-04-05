@@ -22,7 +22,7 @@ function NavBar() {
             Home & Living
           </Link>
           <Link className='relative nav_link' href='#'>
-              Electronics
+            Electronics
           </Link>
           <Link className='relative nav_link' href='#'>
             Beauty

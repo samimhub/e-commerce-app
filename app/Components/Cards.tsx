@@ -16,12 +16,12 @@ interface CardsProps {
 
 function Cards({filterItems}:CardsProps) {
   return (
-    <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 items-center justify-center gap-12 shadow-sm'>
+    <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 items-center justify-center gap-10 shadow-sm'>
       {
       filterItems.map((items) =>(
         <div key={items.id}>
             <Link href={`/shop/${items.id}`}>
-                <img src={items.image} alt="" className='mx-auto w-full hover:scale-105 transition-all'/>
+                <img src={items.image} alt="" className='mx-auto w-full drop-shadow-2xl border rounded-sm hover:scale-105 transition-all duration-200'/>
             </Link>
             <div className='mt-4 px-4'>
                 <h4 className='text-base font-semibold mb-2'>{items.name}</h4>
