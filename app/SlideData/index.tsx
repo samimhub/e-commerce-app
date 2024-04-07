@@ -1,3 +1,8 @@
+import { BsGithub, BsInstagram, BsLinkedin, BsTelegram, BsTwitterX } from "react-icons/bs"
+import { FaFacebook } from "react-icons/fa"
+
+
+
 export const SlideData=[
     {
         id:0,
@@ -49,4 +54,49 @@ export const SlideData=[
         discount:"20%"
     },
     
+]
+export const footerSection =[
+    {
+        title:"Solutions",
+        items:['Merketing','Analytics','Data','Commerce','Cloud']
+    },
+    {
+        title:"Support",
+        items:['Pricing','Documentation','Guides','API','Status']
+    },
+    {
+        title:"Company",
+        items:['About','Blog','Job','Press','Partners']
+    },
+    {
+        title:"Legal",
+        items:['Clients','Privacy','Terms','Policies','Services']
+    },
+]
+export const footerItems=[
+   {
+    name:"LinkedIn",
+    icons:BsLinkedin,
+    link:"www.linkedin.com/in/samim-aktar-431185264"
+   },
+   {
+    name:"GitHub",
+    icons:BsGithub,
+    link:"https://github.com/samimhub"
+   },
+   {
+    name:"Instagram",
+    icons:BsInstagram,
+    link:"https://www.instagram.com/samimaktar7421/?hl=en"
+   },
+   {
+    name:"Facebook",
+    icons:FaFacebook,
+    link:"https://www.facebook.com/profile.php?id=100092564017754&sk=about"
+   },
+   {
+    name:"Twitter",
+    icons:BsTwitterX,
+    link:"https://twitter.com/SAMIMAKTAR6907"
+   },
 ]
