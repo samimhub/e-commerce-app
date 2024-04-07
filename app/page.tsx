@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from './Components/Hero'
 import Category from './Components/Category'
 import Products from './Components/Products'
+import Footer from './Components/Footer'
 
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       <Hero/>
       <Category/>
       <Products/>
+      <Footer/>
     </div>
     
   )
