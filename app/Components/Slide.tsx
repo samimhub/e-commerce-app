@@ -19,7 +19,7 @@ const Slide: React.FC<propsType> = ({ img, title, mainTitle, discount }) => {
         </h2>
         <h3 className="text-2xl font-semibold">
           <b> {discount}</b>
-            {" "}Off
+          {" "}Off
         </h3>
         <div>
           <button className='bg-teal-700 p-3 rounded-md lg:text-xl font-semibold'>Shop Now</button>
