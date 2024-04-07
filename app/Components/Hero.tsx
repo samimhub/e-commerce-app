@@ -14,7 +14,7 @@ function Hero() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay:true,
-    autoplaySpeed:900,
+    autoplaySpeed:2000,
   };
 
   return (

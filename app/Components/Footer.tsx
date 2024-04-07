@@ -4,7 +4,7 @@ import { footerItems, footerSection } from '../SlideData'
 function Footer() {
   return (
     <>
-    <div className='w-full mt-24 bg-slate-900 text-gray-300 px-2 '>
+    <div className='w-full mt-24 bg-slate-900 text-gray-300 px-5 py-2'>
       <div className='max-w-[1240px] mx-auto grid grid-cols-2 lg:grid-cols-4 border-b-2 border-gray-600 py-8'>
         {
             footerSection.map((section,index)=>(
