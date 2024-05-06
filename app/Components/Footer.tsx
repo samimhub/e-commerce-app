@@ -38,7 +38,7 @@ function Footer() {
         <div className='flex flex-col max-w-[1240px px-2 py-4 mx-auto justify-between sm:flex-row text-center text-gray-500
           
       ]'>
-          <p className=' py-4'>2024 E-Commerce Service Provider LLC, All rights reserves</p>
+          <p className=' py-4'>2024 E-Commerce Service Provider LLC@ All rights reserves</p>
           <div className=' flex justify-between sm:w-[300px] text-2xl mt-3'>
             {
               footerItems.map((x, index) => {

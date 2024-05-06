@@ -4,18 +4,20 @@ import { useEffect, useState } from "react"
 import { FaFilter } from "react-icons/fa"
 import Cards from "./Cards"
 
-interface Product {
+export interface Product {
   id: number;
+  image: string;
   name: string;
   category: string;
+  new_price:number;
   // Add more properties if needed
-}
+}0
 
 
 function Products() {
 
-  const [product, setProduct] = useState([]);
-  const [filterItems, setFilterItems] = useState([])
+  const [product, setProduct] = useState<Product[]>([]);
+  const [filterItems, setFilterItems] = useState<Product[]>([])
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [sortOption, setSortOption] = useState("default")
 
@@ -34,8 +36,8 @@ function Products() {
   }, [])
   //Filtering Function
 
-  const filteredItems = (category) => {
-    const filtered = category === "all" ? (product) : product.filter((items) => items.category === category)
+  const filteredItems = (category:any) => {
+    const filtered = category === "all" ? (product) : product.filter((items:any) => items.category === category)
     setFilterItems(filtered)
     setSelectedCategory(category)
   }
@@ -47,7 +49,7 @@ function Products() {
   }
 
   //shorting all products
- const handleSortChange=(option)=>{
+ const handleSortChange=(option:any)=>{
   setSortOption(option);
 
   let sortedItems =[...filterItems]
