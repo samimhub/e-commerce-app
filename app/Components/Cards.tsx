@@ -18,11 +18,10 @@ const Cards: React.FC<CardsProps> = ({ filterItems }) => {
             <Link href={`/shop/${items.id}`}>
               <Image
                 src={items.image}
-                alt=""
+                alt="brandLogo"
                 className='mx-auto w-full drop-shadow-2xl border rounded-sm hover:scale-105 transition-all duration-200'
-                layout="responsive"
                 width={100}
-                height={100}
+                height={120}
               />
             </Link>
             <div className='mt-4 px-4'>

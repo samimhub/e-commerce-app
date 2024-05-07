@@ -76,11 +76,11 @@ function Products() {
       {/*Product card */}
       <div>
         {/*All Button*/}
-        <div className="flex flex-row items-center justify-start gap-4 md:items-start md:gap-10 flex-wrap ">
-          <button onClick={showAll}>All Products</button>
-          <button onClick={()=>filteredItems("women")}>Womens</button>
-          <button onClick={()=>filteredItems("men")}>Mens</button>
-          <button onClick={()=>filteredItems("kid")}>Kids</button>
+        <div className="flex flex-row items-center justify-start text-blue-400 gap-4 md:items-start md:gap-10 flex-wrap ">
+          <button onClick={showAll} className="hover:text-purple-900 hover:drop-shadow-md">All Products</button>
+          <button onClick={()=>filteredItems("women")} className="hover:text-purple-900 hover:drop-shadow-md">Womens</button>
+          <button onClick={()=>filteredItems("men")} className="hover:text-purple-900 hover:drop-shadow-md">Mens</button>
+          <button onClick={()=>filteredItems("kid")} className="hover:text-purple-900 hover:drop-shadow-md">Kids</button>
         </div>
         {/*Shorting Option*/}
         <div className="flex justify-end mb-2 rounded-sm">
