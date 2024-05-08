@@ -24,7 +24,7 @@ function Header() {
               size={20}
             />
           </div>
-          <div className="hidden md:flex items-center justify-center gap-6 text-gray-500">
+          <div className="hidden md:flex items-center justify-center gap-6 text-gray-500 pr-5">
             <div className="relative cursor-pointer flex flex-col items-center">
               <FiHeart />
               <p className=" text-sm font-semibold">Wishlist</p>

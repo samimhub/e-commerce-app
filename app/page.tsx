@@ -8,13 +8,12 @@ import Footer from './Components/Footer'
 function Home() {
   return (
     <div>
-      <Hero/>
-      <Category/>
-      <Products/>
-      <Footer/>
+      <Hero />
+      <Category />
+      <Products />
+      <Footer />
     </div>
-    
-  )
+  );
 }
 
 export default Home
