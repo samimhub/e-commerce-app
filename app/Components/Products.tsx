@@ -1,8 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FaFilter } from "react-icons/fa"
 import Cards from "./Cards"
+import productData from '../Product.json'
 
 export interface Product {
   id: number;
@@ -11,29 +12,16 @@ export interface Product {
   category: string;
   new_price:number;
   // Add more properties if needed
-}0
+}
 
 
 function Products() {
 
-  const [product, setProduct] = useState<Product[]>([]);
-  const [filterItems, setFilterItems] = useState<Product[]>([])
+  const [product, setProduct] = useState<Product[]>(productData);
+  const [filterItems, setFilterItems] = useState<Product[]>(productData)
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [sortOption, setSortOption] = useState("default")
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('product.json');
-        const data = await res.json();
-        setProduct(data);
-        setFilterItems(data);
-      } catch (error) {
-        console.log("Getting some error...", error)
-      }
-    }
-    fetchData()
-  }, [])
   //Filtering Function
 
   const filteredItems = (category:any) => {

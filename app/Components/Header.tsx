@@ -15,7 +15,7 @@ function Header() {
                 </div>
                 <div className='px-3 w-screen sm:w-[300px] md:w-[70%] relative' >
                     <input
-                        className='bg-sky-100  p-2 px-2 w-full rounded-md focus:outline-none text-gray-700 shadow-sm'
+                        className='bg-sky-100 p-2 px-2 w-full rounded-md focus:outline-none text-gray-700 shadow-sm'
                         type="text"
                         placeholder='Type the product' />
                     <BsSearch

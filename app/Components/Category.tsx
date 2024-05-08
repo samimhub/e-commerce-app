@@ -47,7 +47,7 @@ function Category() {
                                 alt="brand"
                                 width={180}
                                 height={70}
-                                className="h-[120px] w-[120] lg:h-[180px] lg:w-[180]"
+                                className="h-[120px] w-auto lg:h-[180px] lg:w-[180]"
                             />
                         </div>
                     ))
@@ -66,7 +66,7 @@ function Category() {
                                     alt="fashion"
                                     height={100}
                                width={200}
-                                    className="hover:scale-105 transition-all duration-200"
+                                    className="h-auto hover:scale-105 transition-all duration-200"
                                 />
                             </div>
                         </Link>

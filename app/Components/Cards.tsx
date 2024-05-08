@@ -20,8 +20,8 @@ const Cards: React.FC<CardsProps> = ({ filterItems }) => {
                 src={items.image}
                 alt="brandLogo"
                 className='mx-auto w-full drop-shadow-2xl border rounded-sm hover:scale-105 transition-all duration-200'
-                width={100}
-                height={120}
+                width={500}
+                height={520}
               />
             </Link>
             <div className='mt-4 px-4'>
