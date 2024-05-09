@@ -33,7 +33,7 @@ function Header() {
               <HiOutlineShoppingBag />
               <p className="text-sm font-semibold">Bag</p>
             </div>
-            <div className=" flex flex-col items-center">
+            <div className=" flex flex-col items-center cursor-pointer">
               <BiUser className="relative cursor-pointer" />
               <p className="text-sm font-semibold">Profile</p>
             </div>
