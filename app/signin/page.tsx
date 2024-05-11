@@ -1,9 +1,8 @@
-
+"use client"
 function page() {
-    
   return (
     <div>
-      hello i'm hera....
+      signin
     </div>
   )
 }

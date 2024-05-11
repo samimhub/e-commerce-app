@@ -60,38 +60,44 @@ function Category() {
                 </button>
                 <div>
                 <Link href="/">
-                            <div className="relative w-full h-full">
+                            <div className="relative w-full h-full hover:scale-105 transition-all duration-200">
+                                <div className="absolute p-1">
+                                    <p>Kid's Special</p>
+                                </div>
                                 <Image
                                     src="/fashion.jpeg"
                                     alt="fashion"
                                     height={100}
                                width={200}
-                                    className="h-auto hover:scale-105 transition-all duration-200"
                                 />
                             </div>
                         </Link>
                 </div>
                     <div className="grid grid-cols-2 gap-4">
                         <Link href="/">
-                            <div className="relative w-full h-full">
+                            <div className="relative w-full h-full hover:scale-105 transition-all duration-200">
+                            <div className="absolute p-1 " >
+                                    <p>Stylish</p>
+                                </div>
                                 <Image
                                     src="/fashion.jpg"
                                     alt="fashion"
                                     height={100}
                                width={200}
-                                    className="hover:scale-105 transition-all duration-200"
                                 />
                             </div>
                         </Link>
                         <div>
                 <Link href="/">
-                            <div className="relative w-full h-full">
+                            <div className="relative w-full h-full hover:scale-105 transition-all duration-200">
+                            <div className="absolute p-1 ">
+                                    <p>Trending</p>
+                                </div>
                                 <Image
                                     src="/girl.jpeg"
                                     alt="fashion"
                                     height={100}
                                width={200}
-                                    className="hover:scale-105 transition-all duration-200"
                                 />
                             </div>
                         </Link>

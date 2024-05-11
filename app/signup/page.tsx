@@ -1,11 +1,11 @@
+"use client"
 
 function page() {
-    
   return (
     <div>
-      hello i'm hera....
+      signup
     </div>
   )
 }
 
-export default page
+export default page;
