@@ -1,9 +1,11 @@
 "use client"
 
+import SignupForm from "./signupForm";
+
 function page() {
   return (
     <div>
-      signup
+      <SignupForm/>
     </div>
   )
 }
