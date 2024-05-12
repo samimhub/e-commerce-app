@@ -1,8 +1,11 @@
 "use client"
+
+import Signinform from "./signinForm"
+
 function page() {
   return (
     <div>
-      signin
+      <Signinform/>
     </div>
   )
 }
