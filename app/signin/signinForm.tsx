@@ -34,6 +34,7 @@ const Signinform = (props: Props) => {
             <input 
             type="text"
             className='p-2 border-gray-300 border-[1px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-gray-600 text-black'
+            autoComplete='off'
             id='email'
             value={user.email}
             placeholder='email'
@@ -43,6 +44,7 @@ const Signinform = (props: Props) => {
             <input 
             type="password"
             className='p-2 border-gray-300 border-[1px] rounded-lg w-[300px] mb-4 focus:outline-none focus:border-gray-600 text-black'
+            autoComplete='off'
             id='password'
             value={user.password}
             placeholder='password'

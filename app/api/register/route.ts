@@ -1,9 +1,12 @@
-import User from '../../model/User'
+import { dbConnect } from '@/app/lib/dbConnect'
+import User from '@/app/model/User';
+
 import bcrypt from "bcrypt"
-import {dbConnect} from '../../lib/dbConnect'
+
 import { NextResponse } from "next/server"
 
-export async function POST(request: Request){
+const registerHandler=async(request:Request)=>{
+
     await dbConnect();
 
     const body = await request.json()
@@ -13,18 +16,33 @@ export async function POST(request: Request){
         password
     } = body;
 
+    
+    if(!name || !email || !password){
+        return NextResponse.json({massage:'Fields are required'})
+    }
+    const user =await User.findOne({name})
+    if(user){
+        return NextResponse.json({massage:'User already exist'})
+    }
+
     const hashedPassword = await bcrypt.hash(password,12)
 
     try{
-        const user = await User.create({
+        const newUser = await User.create({
             data:{
                 name,
                 email,
                 password:hashedPassword
             }
         })
-        return NextResponse.json(user)
-    }catch{
-        return NextResponse.error()
+        return NextResponse.json({
+            massage:'Register Successfully',
+            user:newUser
+        })
+    }catch(error){
+        return NextResponse.json({massage:'Internal Error'})
     }
+}
+export {
+    registerHandler as POST
 }
