@@ -3,6 +3,8 @@ import User from '../../../model/User'
 import CredentialsProvider  from "next-auth/providers/credentials";
 import bcrypt from "bcrypt"
 import { dbConnect } from "@/app/lib/dbConnect";
+require('dotenv').config();
+
 
 export const options:NextAuthOptions = {
     providers:[
