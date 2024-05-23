@@ -1,48 +1,40 @@
-import { dbConnect } from '@/app/lib/dbConnect'
-import User from '@/app/model/User';
+import { dbConnect } from "@/app/lib/dbConnect"
+import User from "@/app/model/User";
+import { NextResponse } from "next/server";
+import bcrypt from 'bcrypt';
 
-import bcrypt from "bcrypt"
-
-import { NextResponse } from "next/server"
-
-const registerHandler=async(request:Request)=>{
-
+const signup = async(request:Request)=>{
     await dbConnect();
 
-    const body = await request.json()
-    const {
-        name,
-        email,
-        password
-    } = body;
+    const body=await request.json();
+    const{
+        name,email,password
+    }=body;
 
-    
     if(!name || !email || !password){
-        return NextResponse.json({massage:'Fields are required'})
+        return NextResponse.json({message:'Fields are require'},{status:200})
     }
-    const user =await User.findOne({name})
+
+    const user = await User.findOne({email})
     if(user){
-        return NextResponse.json({massage:'User already exist'})
+        return NextResponse.json({message:'User already exist'},{status:201})
     }
 
-    const hashedPassword = await bcrypt.hash(password,12)
-
+    const hashedPassword = await bcrypt.hash(password, 12);
     try{
         const newUser = await User.create({
-            data:{
-                name,
-                email,
-                password:hashedPassword
-            }
+            name,email,password:hashedPassword,
         })
+
         return NextResponse.json({
-            massage:'Register Successfully',
+            message:'User Registration successful',
             user:newUser
         })
     }catch(error){
-        return NextResponse.json({massage:'Internal Error'})
+        console.error(error);
+        return NextResponse.json({message:'Internal Server Error'},{status:400})
     }
 }
-export {
-    registerHandler as POST
+export{
+    signup as POST,
 }

@@ -1,9 +1,8 @@
 import type { NextAuthOptions } from "next-auth";
-import User from '../../../model/User'
 import CredentialsProvider  from "next-auth/providers/credentials";
 import bcrypt from "bcrypt"
 import { dbConnect } from "@/app/lib/dbConnect";
-require('dotenv').config();
+import User from "@/app/model/User";
 
 
 export const options:NextAuthOptions = {
@@ -23,21 +22,22 @@ export const options:NextAuthOptions = {
                 }
             },
             async authorize(credentials){
-                await dbConnect();
+                const {db}=await dbConnect(); 
                 
                 if(!credentials?.email || !credentials?.password){
+                    console.error('missing cradential.....')
                     throw new Error('Invalid credentials')
                 }
-                const user = await User.findOne({
+                const user = await db.User('user').findOne({
                     where:{
                         email:credentials.email
                     }
                 })
 
-                if(!user || !user?.password){
+                if(!user){
+                    console.error('User not found or password missing');
                     throw new Error('Invalid credentials')
                 }
-
                 const isCorrectedPassword = await bcrypt.compare(
                     credentials.password,
                     user.password
@@ -46,15 +46,13 @@ export const options:NextAuthOptions = {
                 if(!isCorrectedPassword){
                     throw new Error('Invalid credentials')
                 }
-
+                
+                console.log("Authorization successful for user:", user.email);
                 return user;
             }
         })
     ],
-    pages:{
-        signIn:'/signin',
-        error:'/signin'
-    },
+  
     callbacks:{
         session: async ({session, token, user}) => {
             if(session?.user){
