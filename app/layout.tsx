@@ -7,6 +7,7 @@ import NavBar from "./Components/NavBar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobiNavBar from "./Components/MobiNavBar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,14 +21,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
+    <ClerkProvider>
+        <html lang="en">
       <body className={inter.className}>
-        <Header/>
-        <NavBar/>
-        <MobiNavBar/>
         {children}
         </body>
     </html>
+    </ClerkProvider>
+   
   );
 }

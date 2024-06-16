@@ -5,6 +5,7 @@ import { dbConnect } from "@/app/lib/dbConnect";
 import User from "@/app/model/User";
 
 
+
 export const options:NextAuthOptions = {
     providers:[
         CredentialsProvider({
@@ -22,13 +23,13 @@ export const options:NextAuthOptions = {
                 }
             },
             async authorize(credentials){
-                const {db}=await dbConnect(); 
                 
                 if(!credentials?.email || !credentials?.password){
                     console.error('missing cradential.....')
                     throw new Error('Invalid credentials')
                 }
-                const user = await db.User('user').findOne({
+                await dbConnect();
+                const user = await User.findOne({
                     where:{
                         email:credentials.email
                     }

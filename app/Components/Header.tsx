@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
+import { CgProfile } from 'react-icons/cg'
 import { FiHeart } from 'react-icons/fi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 
@@ -36,14 +37,11 @@ function Header() {
               <HiOutlineShoppingBag />
               <p className="text-sm font-semibold">Bag</p>
             </div>
-            <div onClick={()=> setShowprofile(!showProfile)}className="relative cursor-pointer">
-            <Image src='/person-1.png' alt='profile' height={35} width={35} className='rounded-full object-cover'/>
-            <div className={`absolute z-[2] bg-gray-400 shadow-sm cursor-pointer ${showProfile ? '':'hidden'}`}>
-            <Link href='/signin'>
-              Profile
+              <Link href='/sign-in' className='relative cursor-pointer flex flex-col items-center'>
+              <CgProfile fontSize={18}/>
+              <button className="text-sm font-semibold">Profile</button>
               </Link>
-            </div>
-            </div>
+            
           </div>
         </div>
       </nav>
