@@ -62,7 +62,7 @@ function Category() {
                 <Link href="/">
                             <div className="relative w-full h-full hover:scale-105 transition-all duration-200">
                                 <div className="absolute p-1">
-                                    <p>Kid's Special</p>
+                                    <p>Kids Special</p>
                                 </div>
                                 <Image
                                     src="/fashion.jpeg"
