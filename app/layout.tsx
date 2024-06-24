@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "./Components/Header";
-import NavBar from "./Components/NavBar";
+import "./globals.css"; 
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MobiNavBar from "./Components/MobiNavBar";
 import { ClerkProvider } from "@clerk/nextjs";
+
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
+if (!publishableKey) {
+  throw new Error('Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env')
+}
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +26,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={publishableKey}>
         <html lang="en">
       <body className={inter.className}>
         {children}
