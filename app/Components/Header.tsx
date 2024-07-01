@@ -9,7 +9,6 @@ import { FiHeart } from 'react-icons/fi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 
 function Header() {
-  const [showProfile,setShowprofile]=useState<boolean>(false)
     return (
       <nav className="border-b border-gray-200 py-3">
         <div className="sm:flex items-center justify-between ">
