@@ -4,7 +4,7 @@ import "./globals.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
@@ -29,7 +29,15 @@ export default function RootLayout({
     <ClerkProvider publishableKey={publishableKey}>
         <html lang="en">
       <body className={inter.className}>
-        {children}
+        <header>
+        <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+        </header>
+        <main>{children}</main>
         </body>
     </html>
     </ClerkProvider>
