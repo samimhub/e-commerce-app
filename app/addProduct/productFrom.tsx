@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import Size from '../Components/Size'
@@ -11,7 +12,7 @@ type Props = {}
 const ProductFrom = (props: Props) => {
   const [formData, setFormData] = useState({
     title: '',
-    description: '',
+    description:'',
     category: '',
     style: '',
     store: '',
