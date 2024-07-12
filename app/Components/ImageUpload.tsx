@@ -10,7 +10,7 @@ type Props = {
 }
 
 const ImageUpload: React.FC<Props> = ({ info, updateInfo, imageUrls, setImageUrls, handleImageChange }) => {
-    const onupload = (result: any) => {
+    const onUploadComplete = (result: any) => {
         updateInfo(result.info.secure_url)
         const newImageUrl = result.info.secure_url
         setImageUrls(preImageUrls => [...preImageUrls, newImageUrl])
@@ -27,7 +27,7 @@ const ImageUpload: React.FC<Props> = ({ info, updateInfo, imageUrls, setImageUrl
     return (
         <div>
             <div className='mb-10'>
-                <CldUploadWidget uploadPreset='kfmp7mhq' onUpload={onupload}>
+                <CldUploadWidget uploadPreset='kfmp7mhq' onUploadAdded={onUploadComplete}>
                     {({ open }: any) => {
                         function handleOnclick(e: React.MouseEvent<HTMLButtonElement>) {
                             e.preventDefault()

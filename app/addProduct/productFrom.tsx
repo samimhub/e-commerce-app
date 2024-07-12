@@ -15,12 +15,12 @@ const ProductFrom = (props: Props) => {
     description:'',
     category: '',
     style: '',
-    store: '',
     size: '',
     inventory: 0,
-    color: '',
+    color: '#fe345e',
     price: 0,
     images: '',
+    store:'',
   })
 
 
